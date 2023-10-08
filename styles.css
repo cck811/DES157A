@@ -1,0 +1,31 @@
+img {
+    display: block; /* inline is not useful, generally */
+    max-width: 100%; /* keeps images from overrunning their containers */
+    height: auto; /* makes sure images maintain their proportion and don't get stretched */
+  }
+  
+  /* Lists inside navigation are usually styled differently from lists elsewhere in your markup. */
+  nav ul {
+    list-style-type: none; /* gets rid of the bullets */
+    margin: 0; /* remove margins and padding */
+    padding: 0
+  }
+  
+  /* removing the default padding from these elements can help, so you're not fighting the built in styles. */
+  h1, h2, h3, h4, p {
+    margin: 0;
+    padding: 0;
+    font-family: 'Montserrat Subrayada', sans-serif;
+    font-family: 'Patua One', serif;
+    font-family: 'Roboto', sans-serif;
+  }
+
+  /* You will probably need to add margins back specifically to these elements. This will probably need to be adjusted specifically for your design. */
+  p, h3 { margin-bottom: 1em; }
+  h1, h2 { margin-bottom: .5em; }
+  
+  /* css reset */
+
+  h1{
+
+  }
