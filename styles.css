@@ -25,7 +25,7 @@ img {
   h1, h2 { margin-bottom: .5em; }
   
   /* css reset */
-
-  h1{
-
-  }
+  
+section.content {
+    display: flex;
+}
