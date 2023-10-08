@@ -3,9 +3,34 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>JS Experimentation</title>
 </head>
 <body>
-    
+    <h1>Experiment 1</h1>
+    <h2>Check console to see if it function correctly.</h2>
+    <h3>Objective: Capitalize each word in a string</h3>
+
+    <script>
+    var inputString = "every word here was typed in lowercase in visual studio code";
+    var capitalizedString = ""; //used to stores the result of the string being built as the loop code processes each character
+    var capitalizeNext = true; //true on defualt so the first character in inputString is capitalized
+
+    for (var i = 0; i < inputString.length; i++) {//the loop runs & checks each character in inputString and stops at length-1
+        var character = inputString[i];           //make the loop checks the character located at the i-th position, i value increases every run due to i++
+
+        if (character === character.toLowerCase() && capitalizeNext) {//run this if the current character is in its lower case version & capitalizeNext is still true
+            capitalizedString = capitalizedString + character.toUpperCase();//change the capitalizedString value to make the code to: output previous characters in capitalizedString + change the current character in upper case version
+            capitalizeNext = false;               //set to false so the if statement switches to else
+        } else {
+            capitalizedString = capitalizedString + character;//change the capitalizedString value to make the code to: print previous characters in capitalizedString + continue to output with the current character
+            if (character === ' ') { //if the current character is a Space, it determains the start of a new word
+                capitalizeNext = true;
+            }
+        }
+    }
+
+    console.log(capitalizedString); // "Every Word Here Was Typed In Lowercase In Visual Studio Code";
+
+    </script>
 </body>
 </html>
