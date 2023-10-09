@@ -9,8 +9,8 @@ nav ul {
     margin: 0;
     padding: 0
 }
-nav ul li a {
-    text-decoration:none; /*no underline*/
+a {
+    text-decoration: none; /*remove underline for all clickable link*/
 }
 h1, h2, h3, h4, p { /*removing the default padding*/
     margin: 0;
@@ -27,7 +27,6 @@ h1, h2 { /*change default margin*/
 }
 /* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~CSS Start~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
 
-
 body{
     height: 100%;
     margin: 0;
@@ -37,24 +36,42 @@ body{
     flex-direction: column; /* make each block to stack vertically*/
 }
 
-
-header{
-    display: flex; /* make my name and the About button to be at the same row at the top*/
+.name{
+    color: #262626; 
 }
 
-div.title{ /*the class name section*/
+.about-button {
+    display: inline-block;/*make it block so I can adjust the box property and inline so that it won't stretch accross the parent container*/
+    padding: 10px 20px; /* Adjust padding as needed */
+    background-color: #F2BF5E; 
+    color: #000000;
+    border-radius: 20px; /*fully rounded corners*/
+    font-weight: bold; 
+    text-align: center;
+    position: fixed; /*to fix to the top-right corner */
+    top: 10px; /* Adjust the top value to control the vertical position */
+    right: 10px; /* Adjust the right value to control the horizontal position */
+    transition: background-color 0.3s ease; /*for smooth hover effect*/
+}
+.about-button:hover {
+    background-color: #E8A200; /*darker yellow on hover*/
+}
+
+div.class-title{ /*the class name section*/
     color: #262626; 
 }
 
 main {
-    flex: 1; /* Makes container fill the rest of the vertical space */
+    flex: 1; /*makes container fill the rest of the vertical space*/
     background-color: #262626; 
     display: flex;
     flex-direction: column;
 }
 
 section.quater{
-    color: #FFFFFF;
+    color: #f5f5f5;
+    margin-top: auto; /*push to bottom*/
+    align-self: flex-end; /*push right*/
 }
 
 section.content {
@@ -66,29 +83,52 @@ section.content h4{
 li a {
     color: #595959;
 }
-/* Styles for screens smaller than 768px (typical smartphones) */
+
+  /*Responsive Design(media queries):*/
+
 @media screen and (max-width: 768px) {
-    /* CSS rules for small screens here */
-    body{
-        background-image: url(images/mobileBackground0.png);
-        background-size:cover;
+    /*Rules for small screens here*/
+    /*Rules in here will apply if screens smaller than 768px(phone)*/
+	body{
+        min-width: 360px; /* fix all size dimentions when the screen is smller than 360 px*/
+        background-image: url(images/mobileBackground.png);
+        background-position: left top;
         background-attachment: fixed;
+        background-repeat: no-repeat;
+	}
+    section.top{
+        height: 180px;
     }
 
-  }
+    div.class-title{ 
+        color: #f5f5f5; 
+    }
 
-/* Styles for screens between 768px and 1024px (typical tablets) */
-@media screen and (min-width: 768px) and (max-width: 1023px) {
-    /* CSS rules for medium-sized screens here */
-    main {
-    background-color: #00ff2a;
 }
-  }
 
-  /* Styles for screens larger than 1024px (typical desktops) */
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+	/*Rules for medium-sized screens here*/
+	/*Rules in here will apply if screens is between 768px and 1024px(tablet)*/
+    body{
+        background-image: url(images/tabletBackground.png);
+        background-position: right top;
+        background-attachment: fixed;
+        background-repeat: no-repeat;
+	}
+    section.top{
+        height: 420px;
+    }
+}
+
 @media screen and (min-width: 1024px) {
-    /* CSS rules for large screens here */
-    main {
-    background-color: #5200e1;
+	/*Rules in here will apply if screens is than 1024px(desktops)*/
+    body{
+        background-image: url(images/desktopBackground.png);
+        background-position: right top;
+        background-attachment: fixed;
+        background-repeat: no-repeat;
+	}
+    section.top{
+        height: 60vh;
+    }
 }
-  }
