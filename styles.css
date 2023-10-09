@@ -1,40 +1,56 @@
-  img {
-    display: block; /* inline is not useful, generally */
-    max-width: 100%; /* keeps images from overrunning their containers */
-    height: auto; /* makes sure images maintain their proportion and don't get stretched */
-  }
-  
-  /* Lists inside navigation are usually styled differently from lists elsewhere in your markup. */
-  nav ul {
-    list-style-type: none; /* gets rid of the bullets */
-    margin: 0; /* remove margins and padding */
+/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~CSS Quick Reset~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+img {
+    display: block; 
+    max-width: 100%; /* keeps image within container*/
+    height: auto; /*maintain image proportion and no stretch */
+}
+nav ul {
+    list-style-type: none; /*no bullets */
+    margin: 0;
     padding: 0
-  }
-  nav ul li a {
-    text-decoration:none; /* gets rid of the underline*/
-  }
-
-  /* removing the default padding from these elements can help, so you're not fighting the built in styles. */
-  h1, h2, h3, h4, p {
+}
+nav ul li a {
+    text-decoration:none; /*no underline*/
+}
+h1, h2, h3, h4, p { /*removing the default padding*/
     margin: 0;
     padding: 0;
     font-family: 'Montserrat Subrayada', sans-serif;
     font-family: 'Patua One', serif;
     font-family: 'Roboto', sans-serif;
-  }
+}
+p, h3 { /*change default margin*/
+    margin-bottom: 1em; 
+}
+h1, h2 { /*change default margin*/
+    margin-bottom: .5em; 
+}
+/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~CSS Start~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
 
-  /* You will probably need to add margins back specifically to these elements. This will probably need to be adjusted specifically for your design. */
-  p, h3 { margin-bottom: 1em; }
-  h1, h2 { margin-bottom: .5em; }
-  
-/* css reset */
+
+body{
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    display: flex; /* needed so <main> container can reach the bottom of viewport*/
+    min-height: 100vh; /* needed so <main> container can reach the bottom of viewport*/
+    flex-direction: column; /* make each block to stack vertically*/
+}
+
+
 header{
-    display: flex;
+    display: flex; /* make my name and the About button to be at the same row at the top*/
+}
+
+div.title{ /*the class name section*/
+    color: #262626; 
 }
 
 main {
-    background-color: #262626;
-    /* display: flex; */
+    flex: 1; /* Makes container fill the rest of the vertical space */
+    background-color: #262626; 
+    display: flex;
+    flex-direction: column;
 }
 
 section.quater{
@@ -48,20 +64,31 @@ section.content h4{
     color: #F2BF5E;
 }
 li a {
-    display: block;
     color: #595959;
 }
 /* Styles for screens smaller than 768px (typical smartphones) */
-@media screen and (max-width: 767px) {
+@media screen and (max-width: 768px) {
     /* CSS rules for small screens here */
+    body{
+        background-image: url(images/mobileBackground0.png);
+        background-size:cover;
+        background-attachment: fixed;
+    }
+
   }
 
 /* Styles for screens between 768px and 1024px (typical tablets) */
 @media screen and (min-width: 768px) and (max-width: 1023px) {
     /* CSS rules for medium-sized screens here */
+    main {
+    background-color: #00ff2a;
+}
   }
 
   /* Styles for screens larger than 1024px (typical desktops) */
 @media screen and (min-width: 1024px) {
     /* CSS rules for large screens here */
+    main {
+    background-color: #5200e1;
+}
   }
