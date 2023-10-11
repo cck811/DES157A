@@ -66,6 +66,10 @@ div.class-title{ /*the class name section*/
 div.class-title p { /*change class name margin*/
     margin-bottom: 0px; 
 }
+div.class-title-large-screen p { /*change class name margin*/
+    margin-bottom: 0px; 
+}
+
 main {
     flex: 1; /*makes container fill the rest of the vertical space*/
     background-color: #262626; 
@@ -102,7 +106,14 @@ li a {
     left: 20px;
     color: rgb(0,0,0,0);/*hide*/
 }
-
+footer{
+    position: fixed;
+    bottom: 20px;
+    text-decoration: none;
+}
+footer p a{
+    color: #ffffff1a;
+}
   /*Responsive Design(media queries):*/
 
 @media screen and (max-width: 767px) {
@@ -129,7 +140,7 @@ li a {
         font-weight: 550;
         margin-top: auto;
     }
-    #des157a{ 
+    .des157a{ 
         margin-top: 0.2em;
         margin-bottom:0em;
     }
@@ -153,6 +164,9 @@ li a {
         height: auto;
         top: 20px; /* Adjust the top value to control the vertical position */
         left: 0px;
+    }
+    footer{
+        left: 20px;
     }
 }
 
@@ -180,7 +194,7 @@ li a {
         font-weight: 600;
         margin-top: auto;
     }
-    #des157a{ 
+    .des157a{ 
         font-size: 95px;
         margin-bottom:0em;
     }
@@ -213,6 +227,9 @@ li a {
         position: fixed; /*to fix to the top-right corner */
         top: 20px; /* Adjust the top value to control the vertical position */
         left: 0px;
+    }
+    footer{
+        right: 20px;
     }
 }
 
@@ -251,13 +268,16 @@ li a {
         align-self: center;
         color:rgb(0,0,0,0)
     }
-    #des157a{ 
+    
+    .des157a{ 
         font-size: 95px;
         margin-bottom:0em;
         line-height: 1em;
     }
 
     .class-title-large-screen{
+        font-size: 50px;
+        font-weight: 600;
         display: inline-block; 
         width: 100%;
         height: auto;
@@ -309,5 +329,8 @@ li a {
         padding-bottom: 40px; */
         line-height: 2em;
         margin-left: auto;
+    }
+    footer{
+        right: 20px;
     }
 }
