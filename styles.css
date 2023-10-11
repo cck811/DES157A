@@ -243,25 +243,18 @@ footer p a{
 	}
     
     section.top{
-        background-image: url(images/lines.png), url(images/desktopBackgroundLayer1.png), url(images/desktopBackgroundLayer0.png);
-        background-size: cover, cover, 2500px;
-        background-repeat: no-repeat, no-repeat, no-repeat;
-        background-position: right top, right top, right top;
-        background-attachment: fixed ,fixed, fixed;
+        background-image: url(images/desktopBackgroundLayer1.png), url(images/desktopBackgroundLayer0.png);
+        background-size: cover, 2500px;
+        background-repeat: no-repeat, no-repeat;
+        background-position: right top, right top;
+        background-attachment: fixed, fixed;
         height: 60vh;
         min-height: 450px;
         padding-top: 20px;
         padding-inline: 20px;
         flex-direction: row;
     }
-    @keyframes lineIn {
-        0% {
-            transform: translatex(0px) translatey(0px)
-        }
-        100% {
-            transform: translatex(100px) translatey(100px);
-        }
-    }
+
     div.name{
         position:fixed;
         padding-top:30px;
@@ -312,8 +305,32 @@ footer p a{
         from {right: -620px;}
         to {right: 0px;}
       }
-    .lines {
+    div.lines {
+        background-image: url(images/lines.png);
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: right top;
+        background-attachment: fixed ;
 
+        padding-top: 20px;
+        padding-inline: 20px;
+        position: fixed; /*to fix to the vp */
+        top:0px;
+        right:0px;
+        height: 60vh;
+        width: 100vw;
+        min-height: 450px;
+        animation: lineIn 2s;
+        animation-timing-function: ease-in-out;
+    }
+    
+    @keyframes lineIn {
+        0% {transform: translatex(500px) translatey(-500px);
+            
+        }
+        100% {
+            transform: translatex(0px) translatey(0px)
+        }
     }
     main {
         margin-top: 0;
