@@ -202,15 +202,14 @@ li a {
 	}
     
     section.top{
-        background-image:  url(images/hand.png), url(images/desktopBackground1.png);
+        background-image: url(images/desktopBackground.png);
         background-size: cover;
-        background-repeat: no-repeat, no-repeat;
+        background-repeat: no-repeat;
         height: 60vh;
         max-height: 450px;
         padding-top: 20px;
         padding-inline: 20px;
         flex-direction: row;
-            /* justify-content: center; */
     }
     div.name{
         position:fixed;
