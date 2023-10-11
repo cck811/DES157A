@@ -7,7 +7,7 @@ img {
 nav ul {
     list-style-type: none; /*no bullets */
     margin: 0;
-    padding: 0
+    padding: 0;
 }
 a {
     text-decoration: none; /*remove underline for all clickable link*/
@@ -20,7 +20,7 @@ h1, h2, h3, h4, p { /*removing the default padding*/
     font-family: 'Roboto', sans-serif;
 }
 p, h3 { /*change default margin*/
-    margin-bottom: 1em; 
+    margin-bottom: 0em; 
 }
 h1, h2 { /*change default margin*/
     margin-bottom: .5em; 
@@ -35,7 +35,10 @@ body{
     min-height: 100vh; /* needed so <main> container can reach the bottom of viewport*/
     flex-direction: column; /* make each block to stack vertically*/
 }
-
+section.top{
+    display: flex;
+    flex-direction: column;
+}
 .name{
     color: #262626; 
 }
@@ -49,8 +52,8 @@ body{
     font-weight: bold; 
     text-align: center;
     position: fixed; /*to fix to the top-right corner */
-    top: 10px; /* Adjust the top value to control the vertical position */
-    right: 10px; /* Adjust the right value to control the horizontal position */
+    top: 20px; /* Adjust the top value to control the vertical position */
+    right: 20px; /* Adjust the right value to control the horizontal position */
     transition: background-color 0.3s ease; /*for smooth hover effect*/
 }
 .about-button:hover {
@@ -60,7 +63,9 @@ body{
 div.class-title{ /*the class name section*/
     color: #262626; 
 }
-
+div.class-title p { /*change class name margin*/
+    margin-bottom: 0px; 
+}
 main {
     flex: 1; /*makes container fill the rest of the vertical space*/
     background-color: #262626; 
@@ -70,23 +75,29 @@ main {
 
 section.quater{
     color: #f5f5f5;
-    margin-top: auto; /*push to bottom*/
-    align-self: flex-end; /*push right*/
+    margin-bottom: 0; 
 }
 
 section.content {
     display: flex;
+    line-height: 2em;
 }
 section.content h4{
     color: #F2BF5E;
+    font-size: large;
+    line-height: 2.2em;
 }
 li a {
+    font-family: 'Montserrat Subrayada', sans-serif;
+    font-family: 'Patua One', serif;
+    font-family: 'Roboto', sans-serif;
     color: #595959;
 }
 
+
   /*Responsive Design(media queries):*/
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 767px) {
     /*Rules for small screens here*/
     /*Rules in here will apply if screens smaller than 768px(phone)*/
 	body{
@@ -97,16 +108,38 @@ li a {
         background-repeat: no-repeat;
 	}
     section.top{
-        height: 180px;
+        height: 140px;
+        padding: 20px;
+    }
+    div.name{
+        font-size: 14px;
     }
 
     div.class-title{ 
         color: #f5f5f5; 
+        font-size: 36px;
+        font-weight: 550;
+        margin-top: auto;
     }
-
+    #des157a{ 
+        margin-top: 0.2em;
+        margin-bottom:0em;
+    }
+    section.content {
+        justify-content: space-around;
+        padding-inline: 30px;
+        padding-block: 25px;
+    }
+    section.quater{
+        margin-top: auto; /*push to bottom*/
+        align-self: flex-end; /*push right*/
+        padding-inline: 30px;
+        padding-block: 25px;
+        font-weight: bold;
+    }
 }
 
-@media screen and (min-width: 768px) and (max-width: 1024px) {
+@media screen and (min-width: 767px) and (max-width: 1022px) {
 	/*Rules for medium-sized screens here*/
 	/*Rules in here will apply if screens is between 768px and 1024px(tablet)*/
     body{
@@ -116,19 +149,108 @@ li a {
         background-repeat: no-repeat;
 	}
     section.top{
-        height: 420px;
+        height: 400px;
+        align-items: flex-end;
+        padding: 20px;
     }
+    div.name{
+        padding-inline:100px;
+        padding-top:5px;
+    }
+
+    div.class-title{  
+        font-size: 50px;
+        font-weight: 600;
+        margin-top: auto;
+    }
+    #des157a{ 
+        font-size: 95px;
+        margin-bottom:0em;
+    }
+    main {
+        flex-direction: column-reverse;
+        justify-content: flex-end;
+    }
+    section.quater{
+        padding-inline: 65px;
+        padding-top: 30px;
+        font-size: 44px; 
+        font-weight: 500;
+    }
+    section.content {
+        justify-content: space-around;
+        padding-inline: 100px;
+        padding-top: 25px;
+        line-height: 2.5em;
+    }
+    section.content h4{
+        font-size: 24px;
+    }
+    li a {
+        font-size: 22px;
+    }
+    
 }
 
-@media screen and (min-width: 1024px) {
+@media screen and (min-width: 1023px) {
 	/*Rules in here will apply if screens is than 1024px(desktops)*/
     body{
-        background-image: url(images/desktopBackground.png);
+        /* background-image: url(images/desktopBackground.png); */
         background-position: right top;
         background-attachment: fixed;
         background-repeat: no-repeat;
 	}
+    
     section.top{
+        background-image:  url(images/hand.png), url(images/desktopBackground1.png);
+        background-size: cover;
+        background-repeat: no-repeat, no-repeat;
         height: 60vh;
+        max-height: 450px;
+        padding-top: 20px;
+        padding-inline: 20px;
+        flex-direction: row;
+            /* justify-content: center; */
+    }
+    div.name{
+        position:fixed;
+        padding-top:30px;
+        left: 50%;   /*horizontally align at the middle of the viewport*/
+        transform: translate(-50%, -50%); /*center the item precisely accounting for its own dimensions*/
+    }
+
+    div.class-title{  
+        font-size: 50px;
+        font-weight: 600;
+        padding-left: 8vw;
+        align-self: center;
+    }
+    #des157a{ 
+        font-size: 95px;
+        margin-bottom:0em;
+        line-height: 1em;
+    }
+
+    main {
+        flex-direction: row-reverse;
+        justify-content: flex-end;
+        height: 300px;
+    }
+    section.quater{
+        padding-inline: 65px;
+        font-size: 40px; 
+        font-weight: 500;
+        padding-top: 130px;
+        padding-left: 8vw;
+        padding-right: 0px;
+    }
+    section.content {
+        width: 590px;
+        justify-content: space-around;
+        padding-inline: 40px;
+        padding-top: 20px;
+        padding-bottom: 40px;
+        line-height: 2em;
+        margin-left: auto;
     }
 }
