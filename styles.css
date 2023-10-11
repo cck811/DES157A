@@ -277,7 +277,13 @@ li a {
         position: fixed; /*to fix to the vp */
         top: 15vb; /* Adjust the top value to control the vertical position */
         right: 0px;
+        animation: movein 2s;
+        animation-timing-function: ease-in-out;
     }
+    @keyframes movein {
+        from {right: -620px;}
+        to {right: 0px;}
+      }
 
     main {
         margin-top: 0;
