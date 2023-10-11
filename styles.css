@@ -196,17 +196,19 @@ li a {
 	/*Rules in here will apply if screens is than 1024px(desktops)*/
     body{
         /* background-image: url(images/desktopBackground.png); */
-        background-position: right top;
+        /* background-position: right top;
         background-attachment: fixed;
-        background-repeat: no-repeat;
+        background-repeat: no-repeat; */
 	}
     
     section.top{
-        background-image: url(images/desktopBackground.png);
-        background-size: cover;
-        background-repeat: no-repeat;
+        background-image: url(images/desktopBackgroundLayer1.png), url(images/desktopBackgroundLayer0.png);
+        background-size: cover, 2500px;
+        background-repeat: no-repeat, no-repeat;
+        background-position: right top, right top;
+        background-attachment: fixed, fixed;
         height: 60vh;
-        max-height: 450px;
+        min-height: 450px;
         padding-top: 20px;
         padding-inline: 20px;
         flex-direction: row;
@@ -231,9 +233,10 @@ li a {
     }
 
     main {
+        margin-top: 0;
         flex-direction: row-reverse;
         justify-content: flex-end;
-        height: 300px;
+        height: 60vh;
     }
     section.quater{
         padding-inline: 65px;
