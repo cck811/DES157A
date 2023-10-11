@@ -93,7 +93,15 @@ li a {
     font-family: 'Roboto', sans-serif;
     color: #595959;
 }
-
+.class-title-large-screen{
+    display: inline-block; 
+    width: 100%;
+    height: auto;
+    position: fixed; /*to fix to the top-right corner*/
+    top: 20px; /*adjust the top value to control the vertical position*/
+    left: 20px;
+    color: rgb(0,0,0,0);/*hide*/
+}
 
   /*Responsive Design(media queries):*/
 
@@ -101,7 +109,7 @@ li a {
     /*Rules for small screens here*/
     /*Rules in here will apply if screens smaller than 768px(phone)*/
 	body{
-        min-width: 360px; /* fix all size dimentions when the screen is smller than 360 px*/
+        min-width: 360px; /*fix all size dimentions when the screen is smller than 360 px*/
         background-image: url(images/mobileBackground.png);
         background-position: left top;
         background-attachment: fixed;
@@ -136,6 +144,15 @@ li a {
         padding-inline: 30px;
         padding-block: 25px;
         font-weight: bold;
+    }
+    .hand-img{
+        display: block; 
+        width: 10px;
+        height: auto;
+        position: fixed; /*to fix to the top-right corner */
+        height: auto;
+        top: 20px; /* Adjust the top value to control the vertical position */
+        left: 0px;
     }
 }
 
@@ -189,7 +206,14 @@ li a {
     li a {
         font-size: 22px;
     }
-    
+    .hand-img{
+        display: block; 
+        width: 10px;
+        height: auto;
+        position: fixed; /*to fix to the top-right corner */
+        top: 20px; /* Adjust the top value to control the vertical position */
+        left: 0px;
+    }
 }
 
 @media screen and (min-width: 1023px) {
@@ -225,11 +249,34 @@ li a {
         font-weight: 600;
         padding-left: 8vw;
         align-self: center;
+        color:rgb(0,0,0,0)
     }
     #des157a{ 
         font-size: 95px;
         margin-bottom:0em;
         line-height: 1em;
+    }
+
+    .class-title-large-screen{
+        display: inline-block; 
+        width: 100%;
+        height: auto;
+        position: fixed; /*to fix to the top-right corner*/
+        top: 20px; /*adjust the top value to control the vertical position*/
+        left: 14vh;
+        top: 22.7vb;
+        color: #262626; 
+    }
+    .hand-img{
+        display: block; 
+        width: 49vw;
+        height: auto;
+        background-image: url(images/hand.png);
+        background-repeat: no-repeat;
+        background-size: contain; /*fix img to its box*/
+        position: fixed; /*to fix to the vp */
+        top: 15vb; /* Adjust the top value to control the vertical position */
+        right: 0px;
     }
 
     main {
@@ -242,6 +289,7 @@ li a {
         padding-inline: 65px;
         font-size: 40px; 
         font-weight: 500;
+        
         padding-top: 130px;
         padding-left: 8vw;
         padding-right: 0px;
@@ -249,9 +297,10 @@ li a {
     section.content {
         width: 590px;
         justify-content: space-around;
-        padding-inline: 40px;
+        align-self: center;
+        /* padding-inline: 40px;
         padding-top: 20px;
-        padding-bottom: 40px;
+        padding-bottom: 40px; */
         line-height: 2em;
         margin-left: auto;
     }
