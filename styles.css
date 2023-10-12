@@ -41,6 +41,7 @@ section.top{
 }
 .name{
     color: #262626; 
+    user-select: none;
 }
 
 .about-button {
@@ -61,6 +62,7 @@ section.top{
 }
 
 div.class-title{ /*the class name section*/
+    user-select: none;
     color: #262626; 
 }
 div.class-title p { /*change class name margin*/
@@ -78,6 +80,7 @@ main {
 }
 
 section.quater{
+    user-select: none;
     color: #f5f5f5;
     margin-bottom: 0; 
 }
@@ -98,6 +101,7 @@ li a {
     color: #595959;
 }
 .class-title-large-screen{
+    user-select: none;
     display: inline-block; 
     width: 100%;
     height: auto;
@@ -157,6 +161,7 @@ footer p a{
         font-weight: bold;
     }
     .hand-img{
+        user-select: none;
         display: block; 
         width: 10px;
         height: auto;
@@ -227,6 +232,7 @@ footer p a{
         position: fixed; /*to fix to the top-right corner */
         top: 20px; /* Adjust the top value to control the vertical position */
         left: 0px;
+        user-select: none;
     }
     footer{
         right: 20px;
@@ -260,8 +266,16 @@ footer p a{
         padding-top:30px;
         left: 50%;   /*horizontally align at the middle of the viewport*/
         transform: translate(-50%, -50%); /*center the item precisely accounting for its own dimensions*/
+        animation: moveDown 2.5s;
+        animation-timing-function: ease-in-out;
     }
-
+    @keyframes moveDown {
+        0% {padding-top:0px;color: #26262600; 
+        }
+        100% {
+            padding-top:30px;
+            color: #262626; }
+      }
     div.class-title{  
         font-size: 50px;
         font-weight: 600;
@@ -270,12 +284,13 @@ footer p a{
         color:rgb(0,0,0,0)
     }
     
+    
     .des157a{ 
         font-size: 95px;
         margin-bottom:0em;
         line-height: 1em;
     }
-
+    
     .class-title-large-screen{
         font-size: 50px;
         font-weight: 600;
@@ -287,7 +302,20 @@ footer p a{
         left: 14vh;
         top: 22.7vb;
         color: #262626; 
+        user-select: none;
+        animation: fadeIn 3s;
     }
+    div.class-title-large-screen:hover{
+        color:#F2BF5E;
+    }
+    @keyframes fadeIn {
+        0% {color: #26262600; 
+        }
+        70% {color: #26262600; 
+        }
+        100% {
+            color: #262626; }
+      }
     .hand-img{
         display: block; 
         width: 49vw;
@@ -300,11 +328,13 @@ footer p a{
         right: 0px;
         animation: movein 2s;
         animation-timing-function: ease-in-out;
+        user-select: none;
     }
     @keyframes movein {
         from {right: -620px;}
         to {right: 0px;}
       }
+
     div.lines {
         background-image: url(images/lines.png);
         background-size: cover;
