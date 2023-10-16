@@ -39,16 +39,15 @@
             });
         }
 
+        function randomInt(min, max) {
+            return Math.floor(Math.random() * (max - min + 1) + min);
+        }//randomizer
+
         function setRandomBackgroundColor(colors) {
             var randomIndex = randomInt(0, colors.length - 1);
             document.body.style.backgroundColor = colors[randomIndex];
         }
 
-        function randomInt(min, max) {
-            return Math.floor(Math.random() * (max - min + 1) + min);
-        }
-
-        // Main execution
         var colors = getUserColors();
         displayColors(colors);
         setRandomBackgroundColor(colors);
