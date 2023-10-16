@@ -100,6 +100,9 @@ li a {
     font-family: 'Roboto', sans-serif;
     color: #838383;
 }
+li a:hover {
+    color: #F2BF5E;
+}
 .class-title-large-screen{
     user-select: none;
     display: inline-block; 
