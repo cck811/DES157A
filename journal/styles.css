@@ -1,0 +1,57 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+/*CSS reset*/
+
+body {
+    font-family: 'Arial', sans-serif; /*lans-serif font*/
+    color: #333;
+    background-color: #f4f4f4;
+    max-width: 1200px; /*fix the viewport width*/
+    margin: 0 auto; /*centering content*/
+    padding: 0 20px; /*providing padding for smaller viewports*/
+    font-size: 18px; /*setting base font size*/
+    line-height: 1.6; /*for readability */
+}
+
+
+a {/*links*/
+    color: #0077cc;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+
+header {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 20px 0;
+    margin-bottom: 20px;
+}
+
+main {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+}
+
+
+p {
+    margin-bottom: 20px; 
+    max-width: 34em; 
+    word-wrap: break-word;
+}
+
+.serif-font {
+    font-family: 'Times New Roman', serif;
+
+    max-width: 40em;  /*adjusting line-length for serif font*/
+}
+
