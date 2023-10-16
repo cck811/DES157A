@@ -1,11 +1,58 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Experiment 2</title>
 </head>
+
 <body>
-    
+    <h1>The Background Is Now One Of Your Favorite Colors!</h1>
+    <h1>Your Other Favorite Colors:</h1>
+    <ul id="colorList"></ul>
+
+    <p>This experiment ask the user for their favorite colors, and list them out after. It then sets one of the colors as the page's background randomly.
+    </p>
+
+    <script>
+
+        function getUserColors() {
+            var numberOfColors = prompt("How many favorite colors do you have?");
+            var userColors = [];
+
+            for (var i = 0; i < numberOfColors; i++) {
+                var color = prompt(`Enter favorite color #${i + 1}`);
+                userColors.push(color);
+            }
+
+            return userColors;
+        }
+
+        function displayColors(colors) {
+            var list = document.getElementById('colorList');
+            colors.forEach(function(color) {
+                var listItem = document.createElement('li');
+                listItem.textContent = color;
+                listItem.style.color = color;
+                list.appendChild(listItem);
+            });
+        }
+
+        function setRandomBackgroundColor(colors) {
+            var randomIndex = randomInt(0, colors.length - 1);
+            document.body.style.backgroundColor = colors[randomIndex];
+        }
+
+        function randomInt(min, max) {
+            return Math.floor(Math.random() * (max - min + 1) + min);
+        }
+
+        // Main execution
+        var colors = getUserColors();
+        displayColors(colors);
+        setRandomBackgroundColor(colors);
+    </script>
 </body>
+
 </html>
