@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8"> 
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Irish+Grover&display=swap" rel="stylesheet">
+
+    <title>Build Mad Lib Script</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+
+<body>
+    <main>
+        <header>
+            <h1>Mad Libs</h1>
+        </header>
+        <div class="container">
+            <img src="https://placehold.jp/600x120.png" alt="story picture">
+
+            <p>Above is an image to help you come up with some words. It is a glimps into what your mad libs will be about!</p>
+
+            <form id="myform">
+                <div class="input-group">
+                    <label for="noun1">Noun 1:</label>
+                    <input type="text" id="noun1" required>
+                </div>
+                
+                <div class="input-group">
+                    <label for="pluralnoun">Plural Noun:</label>
+                    <input type="text" id="pluralnoun" required>
+                </div>
+
+                <div class="input-group">
+                    <label for="noun2">Noun 2:</label>
+                    <input type="text" id="noun2" required>
+                </div>
+                
+                <div class="input-group">
+                    <label for="verb">Verb:</label>
+                    <input type="text" id="verb" required>
+                </div>
+
+                <div class="input-group">
+                    <label for="adverb">Adverb:</label>
+                    <input type="text" id="adverb" required>
+                </div>
+
+                <div class="input-group">
+                    <label for="adj">Adjective:</label>
+                    <input type="text" id="adj" required>
+                </div>
+
+                <div class="buttons">
+                    <button type="reset">Clear</button>
+                    <button id="creatStoryBtn" type="submit">Create Story!</button>
+                    <button type="button" id="random">Random</button>
+                </div>
+            </form>
+
+            <article id="madlib"></article>
+        </div>
+    </main>
+
+    <footer>
+    </footer>
+</body>
+
+</html>
