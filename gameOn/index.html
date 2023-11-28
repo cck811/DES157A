@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Card Picking Game</title>
+    <link rel="stylesheet" href="styles.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Rye&display=swap" rel="stylesheet">
+
+    <script src="script.js" defer></script>
+</head>
+
+<body>
+
+    <div id="game-container">
+
+        <h1>The 12 Points Shooter</h1>
+
+        <div id="scoreboard">
+            <div id="player1" class="score">
+                <h2>Player 1</h2>
+                <p>Score: <span class="score-value">0</span></p>
+            </div>
+
+            <div id="messages-container">
+                <div id="turnMessages"></div>
+                <div id="messages"></div>
+            </div>
+
+            <div id="player2" class="score">
+                <h2>Player 2</h2>
+                <p>Score: <span class="score-value">0</span></p>
+            </div>
+        </div>
+
+        <div id="winning-screen-background">
+            <div id="winning-screen">
+                <div id="winning-messages"><p> </p></div>
+                <img src="images/cowboys.png" id="cowboy-image">
+                <div id="startgame-button-section">
+                    <button id="startgame"></button>
+                </div>
+            </div>
+        </div>
+
+        <div id="card-area">
+            <button class="card" id="card1">?</button>
+            <button class="card" id="card2">?</button>
+            <button class="card" id="card3">?</button>
+            <button class="card" id="card4">?</button>
+            <button class="card" id="card5">?</button>
+            <button class="card" id="card6">?</button>
+        </div>
+
+    </div>
+
+</body>
+</html>
