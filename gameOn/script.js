@@ -2,42 +2,51 @@
     'use strict'; 
     console.log('Reading JS');
 
-    // Initialization of variables
-    const playerScores = [0, 0]; // Array to hold scores of the two players
+    /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~Initialize variables~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/ 
+    
+    const playerScores = [0, 0]; // An array to hold scores of the two players
     let currentPlayer = 0; // Variable to track the current player (0 for Player 1 and 1 for Player 2)
     const winningScore = 12; // Score needed to win the game
 
-    // DOM elements for displaying scores
-    const scoreElements = [
-        document.querySelector('#player1 .score-value'), // Player 1's score display element
-        document.querySelector('#player2 .score-value')  // Player 2's score display element
-    ];
-    const messageDiv = document.getElementById('messages'); // Element for displaying messages
-    const turnMessageDiv = document.getElementById('turnMessages');
-    const winningScreenBackground = document.getElementById('winning-screen-background');
-    const winningScreen = document.getElementById('winning-screen');
-    const winningMessageDiv = document.getElementById('winning-messages');
-    const startGameButton = document.getElementById('startgame'); // Button to start the game
-    const cardButtons = document.querySelectorAll('.card'); // NodeList of all the card buttons
+    let turnsTakenThisRound = 0;  // Counter for turns taken in the current round.
+    let usedLuckThisTurn = false; // Track if the Luck Button has been used this turn
 
-    // Function to initialize the game
-    function startGame() {
+    /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~Get Elements~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/ 
+    
+    const scoreElements = [
+        document.querySelector('#player1 .score-value'), // Element of Player 1's score
+        document.querySelector('#player2 .score-value')  // Element of Player 2's score
+    ];// Elements for displaying scores
+    const testLuckButton = document.getElementById('testLuckButton'); // Element of Luck Button
+    const messageDiv = document.getElementById('messages'); // Element for general game messages
+    const turnMessageDiv = document.getElementById('turnMessages'); // Element for turn-specific messages
+    const winningScreenBackground = document.getElementById('winning-screen-background'); // Element of winning screen background
+    const winningScreen = document.getElementById('winning-screen'); //Element of winning screen
+    const winningMessageDiv = document.getElementById('winning-messages'); //Element of the message of winning screen 
+    const startGameButton = document.getElementById('startgame'); // Element of Start New Game Button
+    const cardButtons = document.querySelectorAll('.card'); // Collection of all the card buttons
+
+    /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~Function to initialize game~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+    
+    function startGame() { // Function for resetting game
         playerScores[0] = 0; // Reset Player 1's score
         playerScores[1] = 0; // Reset Player 2's score
         currentPlayer = 0; // Set the current player to Player 1
-        let shuffledCards = shuffleCards(); // Shuffle the card values
-        
-        // Assign shuffled values to card buttons
-        cardButtons.forEach((button, index) => {
+        let shuffledCards = shuffleCards(); // Shuffle card values
+        cardButtons.forEach((button, index) => {// Assign shuffled values to each card buttons
             button.dataset.value = shuffledCards[index];
         });
+
         updateScores(); // Update the scores display
+
         messageDiv.textContent = "Player 1 starts the game!"; // Display starting player message
-        turnMessageDiv.textContent = "Pick a Card!";
+        turnMessageDiv.textContent = "Pick a Card!"; // Display turn message
 
         startGameButton.style.display = 'none'; // Hide the start game button
-        winningScreen.style.display = 'none';
-        winningScreenBackground.style.display = 'none';
+        winningScreen.style.display = 'none'; // Hide winning screen.
+        winningScreenBackground.style.display = 'none';// Hide winning screen background.
+
+        resetTestMyLuck(); // Reset the Luck Button state.
     }
 
     // Function to update scores on the screen
@@ -45,8 +54,46 @@
         scoreElements[0].textContent = playerScores[0]; // Update Player 1's score display
         scoreElements[1].textContent = playerScores[1]; // Update Player 2's score display
     }
+
+    // Function to reset the Luck Button state.
+    function resetTestMyLuck() { 
+        usedLuckThisTurn = false;
+        testLuckButton.disabled = false;
+        testLuckButton.textContent = 'Test My Luck';
+    }
+
+    testLuckButton.addEventListener('click', function() { // Event listener for Luck Button.
+        usedLuckThisTurn = true;
+        testLuckButton.disabled = true; // Disable the button after use
+    });
+
+    /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~Function to show instruction overlay~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
     
-    // Function to shuffle card values
+    document.addEventListener('DOMContentLoaded', (event) => { // Event listener upon entering site
+        const instructionsOverlay = document.getElementById('instructions-overlay'); // Element of the instruction overlay
+        const showInstructionsBtn = document.getElementById('show-instructions');// Element of ? button
+        const closeInstructionsBtn = document.getElementById('close-instructions');// Element of Close button
+
+        // Show the overlay when the page loads
+        instructionsOverlay.style.display = 'block';
+
+        // Hide overlay when "Close" is clicked
+        closeInstructionsBtn.addEventListener('click', function() { 
+            instructionsOverlay.style.display = 'none';
+        });
+    
+        // Toggle overlay visibility when ? button is clicked
+        showInstructionsBtn.addEventListener('click', function() {
+            if (instructionsOverlay.style.display === 'none') {
+                instructionsOverlay.style.display = 'block';
+            } else {
+                instructionsOverlay.style.display = 'none';
+            }
+        });
+    });
+
+    /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~Function to shuffle card values~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+    
     function shuffleCards() {
         let cardValues = [1, 2, 3, 4, 5, 6]; // Array of card values
         for (let i = cardValues.length - 1; i > 0; i--) {
@@ -56,10 +103,11 @@
         return cardValues; // Return the shuffled array
     }
 
-    // Function to handle card pick
+    /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~Function to handle card pick~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+    
     function pickCard(event) {
         let cardValue = parseInt(event.target.dataset.value); // Get the value of the clicked card
-
+        
         switch (cardValue) { // Switch statement for different card values
             case 1:
                 playerScores[currentPlayer] += cardValue;
@@ -94,8 +142,33 @@
         cardButtons.forEach((button, index) => {
             button.dataset.value = shuffledCards[index];
         });
+
+        /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~Luck Button Logic~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+
+        // Increment turn counter and check if turn should be switched.
+        turnsTakenThisRound++; 
+        if (!usedLuckThisTurn || turnsTakenThisRound >= 2) {
+            switchPlayer();
+        }
+        if (!usedLuckThisTurn || unknown) {
+            switchPlayer();
+        }
+        // Function to switch to the next player.
+        function switchPlayer() {
+            currentPlayer = (currentPlayer + 1) % 2; // Switch to next player
+            resetTestMyLuck(); // Reset Test My Luck state
+            turnsTakenThisRound = 0; // Reset turns taken
+            messageDiv.textContent = `It's Player ${currentPlayer + 1}'s turn.`;
+        }
         
-        // Check for a winning condition
+        testLuckButton.addEventListener('click', function() {
+            usedLuckThisTurn = true;
+            testLuckButton.disabled = true;
+            turnsTakenThisRound = 0; // Reset turns taken since player is using their luck turn
+        });
+
+        /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~Check winning condition~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+
         if (playerScores[currentPlayer] >= winningScore) {
             // Declare current player as winner
             messageDiv.textContent = `Player ${currentPlayer + 1} wins with ${playerScores[currentPlayer]} points!`;
@@ -112,19 +185,19 @@
             messageDiv.textContent = `It's Player ${currentPlayer + 1}'s turn.`;
 
         }
-
+        
         updateScores(); // Update the scores display
     }
 
-    // Add event listeners to card buttons for picking cards
-    cardButtons.forEach(button => {
+    cardButtons.forEach(button => {     // Event listeners for each card buttons for picking cards
         button.addEventListener('click', pickCard);
     });
-
+    
     // Add event listener to start game button
     startGameButton.addEventListener('click', startGame);
 
-    // Start the game for the first time
-    startGame();
+    /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~Run game~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+    
+    startGame();// Start the game for the first time
 
 })();

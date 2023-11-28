@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Card Picking Game</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -14,6 +15,26 @@
 </head>
 
 <body>
+    
+    <div id="instructions-overlay">
+        <div class="overlay-content">
+            <h2>Objective:</h2>
+            <p>Be the first player to collect 12 points from the cards. But here's the catch, some cards might set you back!</p>
+            <br>
+            <h2>How to Play:</h2>
+            <ul>
+				<li><p>Player 1 will start the game.</p></li>
+				<li><p>Each turn, click on one of the cards to score. 4 of the cards will add points to your score and 2 of the cards take points away.</p></li>
+				<li><p>The 'Test My Luck' button is available at the start of each turn. This gives you a chance to pick two cards instead of one. But use this option wisely, as one of the card might reset your scores.</p></li>
+				<li><p>After picking a card (or two, if you've tested your luck), the turn automatically switches to the other player.</p></li>
+			</ul>
+            <br>
+            <h2>Winning the Game:</h2>
+            <p>The first player to reach or exceed 12 points wins the game!</p>
+            <br>
+            <button id="close-instructions">Close</button>
+        </div>
+    </div>
 
     <div id="game-container">
 
@@ -55,6 +76,8 @@
             <button class="card" id="card6">?</button>
         </div>
 
+        <button id="testLuckButton">Test My Luck</button>
+        <button id="show-instructions">?</button>
     </div>
 
 </body>
