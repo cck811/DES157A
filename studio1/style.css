@@ -99,13 +99,14 @@ input[type="text"] {
 
 button {
     background-color: #3498db;
-    color: #ecf0f1;
+    color: #000000;
     padding: 8px 12px;
     border: none;
     border-radius: 5px;
     margin: 0 5px;
     cursor: pointer;
-    border: 5px solid #000000;
+    border-radius: 30px;
+    border: 4px solid #000000;
 }
 
 #creatStoryBtn {
@@ -156,6 +157,7 @@ h2{
 #close{
     margin-inline: auto;
     display: block;
+    width:93px;
 }
 
 footer {
