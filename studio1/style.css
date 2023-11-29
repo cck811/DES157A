@@ -1,52 +1,88 @@
+/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~CSS Quick Reset~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+img {
+    display: block; 
+    max-width: 100%; /* keeps image within container*/
+    height: auto; /*maintain image proportion and no stretch */
+}
+nav ul {
+    list-style-type: none; /*no bullets */
+    margin: 0;
+    padding: 0
+}
+a {
+    text-decoration: none; /*remove underline for all clickable link*/
+}
+h1, h2, h3, h4, p { /*removing the default padding*/
+    margin: 0;
+    padding: 0;
+}
+p, h3 { /*change default margin*/
+    margin-bottom: 1em; 
+}
+h1, h2 { /*change default margin*/
+    margin-bottom: .3em; 
+}
+/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~CSS Start~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+
 body {
     font-family: "Irish Grover";
     background-color: #f4f4f4;
     margin: 0;
     padding: 0;
+    overflow: hidden;
+    display: flex;
+    height:100vh;
 }
 
 header {
     font-size: xx-large;
     text-align: center;
     padding: 0;
-    color: #000000;
+    color: #ffffff;
+    height: 10%; /* Adjust based on your header size */
 }
 
 main {
-    max-width: 900px;
+    height: auto;
+    max-width: 850px;
     background-color: #565f6d;
-    margin: 40px auto;
+    margin: auto;
     padding: 20px;
-    border: 5px solid #000000;
-}
-.container {
-    max-width: 600px;
-    background-color: #fdfdfd;
-    margin: 40px auto;
-    padding: 20px;
+    border-radius: 10px;
     border: 5px solid #000000;
 }
 
-p {
-    background-color: #ecf0f1;
+.container {
+    max-width: 600px; /* Adjust width to not exceed main */
+    background-color: #fdfdfd;
+    margin: 10px auto;
     padding: 15px;
+    border: 5px solid #000000;
+    border-radius: 10px;
+}
+
+p {
+    padding: 10px;
     margin: 0;
     margin-bottom: 10px;
 }
 
 .input-group {
-    margin-bottom: 20px;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 15px;
 }
 
 label {
     display: inline-block;
-    width: 100px;
+    width: 250px;
     font-weight: bold;
+    margin-bottom: 5px;
 }
 
 input[type="text"] {
-    width: 70%;
-    padding: 10px;
+    width:auto;
+    padding: 8px;
     border: 1px solid #ccc;
     border-radius: 5px;
 }
@@ -58,18 +94,60 @@ input[type="text"] {
 button {
     background-color: #3498db;
     color: #ecf0f1;
-    padding: 10px 15px;
+    padding: 8px 12px;
     border: none;
     border-radius: 5px;
-    margin: 0 10px;
+    margin: 0 5px;
     cursor: pointer;
     border: 5px solid #000000;
 }
 
-#creatStoryBtn{
+#creatStoryBtn {
     background-color: #db3434;
 }
 
 button:hover {
     background-color: #2980b9;
+}
+
+#clear{
+    width:93px;
+}
+
+#story-overlay{
+    display: none; /* Initially hidden */
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+    z-index: 1000; /* Ensure it's above other content */
+}
+
+#madlib{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    height: 430px;
+    width: 450px;
+    transform: translate(-50%, -50%);
+    background: white;
+    padding: 30px;
+    border-radius: 10px;
+    text-align: left;
+    overflow-y: auto;
+}
+
+#p1, #p2, #p3, #p4 {
+    background-color: none;
+}
+
+#close{
+    margin-inline: auto;
+    display: block;
+}
+
+footer {
+    height: 10%; /* Adjust based on your footer size */
 }

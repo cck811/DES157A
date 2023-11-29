@@ -21,51 +21,60 @@
             <h1>Mad Libs</h1>
         </header>
         <div class="container">
-            <img src="https://placehold.jp/600x120.png" alt="story picture">
+            <img src="images/park.png" alt="story picture">
 
-            <p>Above is an image to help you come up with some words. It is a glimps into what your mad libs will be about!</p>
+            <p>Here glimps into what your mad libs will be about!</p>
 
             <form id="myform">
                 <div class="input-group">
-                    <label for="noun1">Noun 1:</label>
-                    <input type="text" id="noun1" required>
+                    <label for="word0">Give me an animal:</label>
+                    <input type="text" id="word1" required>
                 </div>
                 
                 <div class="input-group">
-                    <label for="pluralnoun">Plural Noun:</label>
-                    <input type="text" id="pluralnoun" required>
+                    <label for="word1">Name a vehicle:</label>
+                    <input type="text" id="word2" required>
                 </div>
 
                 <div class="input-group">
-                    <label for="noun2">Noun 2:</label>
-                    <input type="text" id="noun2" required>
+                    <label for="word2">Shout an exclamation!:</label>
+                    <input type="text" id="word3" required>
                 </div>
                 
                 <div class="input-group">
-                    <label for="verb">Verb:</label>
-                    <input type="text" id="verb" required>
+                    <label for="word3">Give me a name:
+                    </label>
+                    <input type="text" id="word4" required>
                 </div>
 
                 <div class="input-group">
-                    <label for="adverb">Adverb:</label>
-                    <input type="text" id="adverb" required>
+                    <label for="word4">How do you feel right now? (an emotion)</label>
+                    <input type="text" id="word5" required>
                 </div>
 
                 <div class="input-group">
-                    <label for="adj">Adjective:</label>
-                    <input type="text" id="adj" required>
+                    <label for="word5">Name a sport or game:</label>
+                    <input type="text" id="word6" required>
                 </div>
 
                 <div class="buttons">
-                    <button type="reset">Clear</button>
-                    <button id="creatStoryBtn" type="submit">Create Story!</button>
                     <button type="button" id="random">Random</button>
+                    <button id="creatStoryBtn" type="submit">Create Story!</button>
+                    <button type="reset" id="clear">Clear</button>
                 </div>
             </form>
-
-            <article id="madlib">
-                <h2>Mad Libs Story</h2>
-            </article>
+        </div>
+        <div id="story-overlay">            
+            <div id="madlib">
+                <article id="story">
+                    <h2>Mad Libs Story</h2>
+                    <p id="p1"></p>
+                    <p id="p2"></p>
+                    <p id="p3"></p>
+                    <p id="p4"></p>
+                </article>
+                <button id="close">Close</button>
+            </div>
         </div>
     </main>
 
