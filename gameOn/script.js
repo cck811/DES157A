@@ -25,6 +25,8 @@
     const winningMessageDiv = document.getElementById('winning-messages'); //Element of the message of winning screen 
     const startGameButton = document.getElementById('startgame'); // Element of Start New Game Button
     const cardButtons = document.querySelectorAll('.card'); // Collection of all the card buttons
+    const gunSound = new Audio('sound/shot.mp3'); // Gun sound effect
+    const winSound = new Audio('sound/win.mp3'); // Winning sound effect
 
     /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~Function to initialize game~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
     
@@ -175,6 +177,7 @@
             winningScreenBackground.style.display = 'block';
             winningScreen.style.display = 'flex';
             winningMessageDiv.textContent = `Congratulations! You've won!`;
+            winSound.play();
 
             startGameButton.style.display = 'block'; // Show the start game button
             startGameButton.textContent = 'Start a New Game';
@@ -198,8 +201,10 @@
 
     document.addEventListener('DOMContentLoaded', (event) => {
         const img = document.getElementById('clickImage');
-    
-        document.body.addEventListener('click', function(e) {
+        document.body.addEventListener('click', function (e) {
+            gunSound.play();
+            gunSound.volume = 0.6;
+
             // Show the image if it's not visible
             img.style.display = 'block';
     
