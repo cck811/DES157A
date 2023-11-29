@@ -244,7 +244,7 @@ h1 {
   }
 
 #show-instructions{
-    
+    font-size: 30px;
     background: #ffffff00;
     position: fixed;
     top: 85%;
