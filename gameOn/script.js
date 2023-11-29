@@ -196,6 +196,19 @@
     // Add event listener to start game button
     startGameButton.addEventListener('click', startGame);
 
+    document.addEventListener('DOMContentLoaded', (event) => {
+        const img = document.getElementById('clickImage');
+    
+        document.body.addEventListener('click', function(e) {
+            // Show the image if it's not visible
+            img.style.display = 'block';
+    
+            // Position the image at the click coordinates
+            img.style.left = e.pageX + 'px';
+            img.style.top = e.pageY + 'px';
+        });
+    });
+
     /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~Run game~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
     
     startGame();// Start the game for the first time
