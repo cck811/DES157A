@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Picture Gallery</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <script src="script.js" defer></script>
+  </head>
+  
+  <body>
+    <div class="slider-container">
+        <div id="slider">
+            <div class="a">
+                <a href="#img1" class="no-url-change"><img src="images/img1.jpg" alt="slide 1"></a>
+                <a href="#img2" class="no-url-change"><img src="images/img2.jpg" alt="slide 2"></a>
+                <a href="#img3" class="no-url-change"><img src="images/img3.jpg" alt="slide 3"></a>
+                <a href="#img4" class="no-url-change"><img src="images/img4.jpg" alt="slide 4"></a>
+                <a href="#img5" class="no-url-change"><img src="images/img5.jpg" alt="slide 5"></a>
+            </div>
+        </div>
+    </div>
+
+    <div id="head">
+        <h1>My Picture Gallery</h1>
+        <p>Welcome to my digital gallery, where each photo is a window to the world as seen through my lens. From serene landscapes to bustling cityscapes, these images are snippets of my journey, captured with passion and precision. Dive into this visual feast and experience the world from my unique perspective.</p>
+    </div>
+
+    <main>
+    <!-- box 1 -->
+      <article id="img1">
+        <div class="img-container">
+          <div class="zoom-container">
+            <img sizes="(max-width: 1000px) 100vw, 1000px" src="images/img1.jpg" alt="" class="zoom-image">
+          </div>
+        </div>
+
+        <div class="description-container">
+          <div class="title-container">
+            <h1>Arboretum, Davis</h1>
+          </div>
+          <div class="text-container">
+            <p>Standing here at the Arboretum in Davis, CA, I'm wrapped up in a calm feeling. The sun peeks through the leaves, making the air glow all around me. There's a greenhouse right there with the trees, like it's part of the family. Everything is quiet, and it's just nice to be here where the sunshine plays around and everything feels kind of perfect and peaceful.</p>
+          </div>
+        </div>
+      </article>
+      <hr>
+    <!-- box 2 -->
+      <article id="img2">
+        <div class="description-container">
+          <div class="title-container">
+            <h1>Texture</h1>
+          </div>
+          <div class="text-container">
+            <p>Looking at this photo I snapped, the twisty tree branches really catch my eye. They're all tangled up like a big old knot, and in black and white, every twist and bump stands out. It's pretty cool how they wrap around each other, kind of like they're hugging or doing a bit of a dance. The rough bark looks really neat without any colors, just the light making some parts bright and others dark. It's like nature made its own wild pattern, and I just had to take a picture of it.</p>
+          </div>
+        </div>
+
+        <div class="img-container">
+          <div class="zoom-container">
+            <img sizes="(max-width: 1000px) 100vw, 1000px" src="images/img2.jpg" alt="" class="zoom-image">
+          </div>
+        </div>
+      </article>
+      <hr>
+    <!-- box 3 -->
+      <article id="img3">
+        <div class="img-container">
+          <div class="zoom-container">
+                <img sizes="(max-width: 1000px) 100vw, 1000px" src="images/img3.jpg" alt="" class="zoom-image">
+            </div>
+        </div>
+
+        <div class="description-container">
+          <div class="title-container">
+            <h1>Bonita Point</h1>
+          </div>
+          <div class="text-container">
+            <p>Standing here at Bonita Point in California, the sunset's painting everything pink and gold. That big rock jutting into the sky is catching the last warm rays, making it glow while the rest starts to fade into the evening. There's a tiny sliver of the moon up there, and the ocean just goes on forever. A few people are hanging out, enjoying the view, and some birds are still flying around. It's one of those moments that feels kind of magical, like the whole world has paused for a breath.</p>
+          </div>
+        </div>
+      </article>
+      <hr>
+    <!-- box 4 -->
+      <article id="img4">
+        <div class="description-container">
+        <div class="title-container">
+            <h1>Hong Kong</h1>
+        </div>
+        <div class="text-container">
+            <p>Right here in the middle of Hong Kong, the city's pulse is buzzing through me. It's a blur of people moving, like a river of colors—reds, blues, every shade rushing past. The world's moving fast, the traffic lights blinking, ads shouting from every corner, but it's like I'm in the eye of a storm, watching everything whirl around me. It's loud, it's bright, it's non-stop. Feels like the city's alive, and I'm just a part of this huge, wild heartbeat.</p>
+        </div>
+
+        </div>
+        <div class="img-container">
+          <div class="zoom-container">
+            <img sizes="(max-width: 1000px) 100vw, 1000px" src="images/img4.jpg" alt="" class="zoom-image">
+          </div>
+        </div>
+      </article>
+      <hr>
+    <!-- box 5 -->
+      <article id="img5">
+        <div class="img-container">
+          <div class="zoom-container">
+            <img sizes="(max-width: 1000px) 100vw, 1000px" src="images/img5.jpg" alt="" class="zoom-image">
+          </div>
+        </div>
+        <div class="description-container">
+          <div class="title-container">
+            <h1>Street Biker</h1>
+          </div>
+          <div class="text-container">
+            <p>Leaning against my bike at the graffiti bridge in Davis, CA, I feel like a part of the art around me. The colorful spray paint is a wild backdrop to the chrome and steel of my ride. It's a cool spot, kind of edgy and vibrant. You can almost hear the hiss of spray cans in the air, mixed with the low rumble of my bike's engine. It's like the graffiti's telling a hundred stories, and me and my bike just rolled into one of them. Just another sunny day, me taking it all in, feeling pretty awesome with my bike on this splashy, painted stage.</p>
+          </div>
+        </div>
+      </article>
+
+    </main>
+
+    <footer>
+        <p>&copy; 2023 Anthony Chan. All rights reserved.</p>
+    </footer>
+
+  </body>
+</html>
