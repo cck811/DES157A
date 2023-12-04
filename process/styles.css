@@ -48,12 +48,13 @@ header {
     padding: 1em 0;
 }
 
-header h1{
+#title-h1{
     margin-bottom:0;
 }
 
 #title{
     text-align: center;
+    margin-bottom:0;
 }
 
 main {
@@ -69,6 +70,9 @@ img {
 section {
     padding: 20px;
     margin: 20px;
+}
+#funtion-improvement{
+    margin-top:0;
 }
 
 footer {
