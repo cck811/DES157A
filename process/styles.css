@@ -48,6 +48,10 @@ header {
     padding: 1em 0;
 }
 
+header h1{
+    margin-bottom:0;
+}
+
 #title-h1{
     margin-bottom:0;
 }
