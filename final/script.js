@@ -15,12 +15,12 @@
     const p4 = document.getElementById('p4');
     
     // Words for each category
-    const animals = ['dog', 'cat', 'elephant', 'giraffe', 'kangaroo'];
+    const animals = ['dog', 'cat', 'bunny', 'giraffe', 'kangaroo'];
     const vehicles = ['car', 'bicycle', 'scooter', 'truck', 'airplane'];
-    const exclamations = ['Wow', 'Oops', 'Eureka', 'Bingo', 'Hurray'];
-    const names = ['Alex', 'Jordan', 'Taylor', 'Morgan', 'Mary'];
+    const exclamations = ['Wow', 'Oops', 'Hey', 'Ohhh', 'Hurray'];
+    const names = ['Anthony', 'Jordan', 'Jhonny', 'Timmy', 'Mary'];
     const emotions = ['happy', 'sad', 'excited', 'nervous', 'relaxed'];
-    const sports = ['soccer', 'basketball', 'chess', 'tennis', 'badminton'];
+    const sports = ['soccer', 'basketball', 'chess', 'tennis', 'football'];
 
     /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~Stories~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
 
