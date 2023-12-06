@@ -27,7 +27,10 @@ h1, h2 { /*change default margin*/
 
 body {
     font-family: 'Montserrat', sans-serif;
-    background-color: #f4f4f4;
+    background-color: #ffffff;
+    background-image:  radial-gradient(#a7a7a7 1.5px, transparent 1.5px), radial-gradient(#a7a7a7 1.5px, #ffffff 1.5px);
+    background-size: 60px 60px;
+    background-position: 0 0,30px 30px;
     margin: 0;
     padding: 0;
     overflow: hidden;
@@ -147,7 +150,7 @@ button {
 #creatStoryBtn {
     background-color: #EC5349;
     padding-inline: 20px;
-    font-weight: bolder;
+    color: #ffffff;
 }
 
 #creatStoryBtn:hover {
@@ -294,14 +297,14 @@ h2{
     margin-bottom: 0;
     display: block;
     width:93px;
-    background-color: #6f80bb;
+    color: #6f80bb;
+    background-color: transparent;
     border: 4px solid #6f80bb;
-    color: #ffffff;
 }
 
 #close-instructions:hover{
-    color: #6f80bb;
-    background-color: transparent;
+    background-color: #6f80bb;
+    color: #ffffff;
 }
 
 /* ~~~~~~~~~~~~~~~~~~~~~~~~~~~Footer~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
