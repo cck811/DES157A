@@ -1,17 +1,75 @@
 ( function(){
     'use strict';
     console.log('Reading JS');
+
     const myForm = document.querySelector('#myform');
     const madlib = document.querySelector('#madlib');
     const formData = document.querySelectorAll("input[type=text]");
     const storyOverlay = document.getElementById('story-overlay')
     const closeBtn = document.getElementById('close');
 
+    //Get story elements
     const p1 = document.getElementById('p1');
     const p2 = document.getElementById('p2');
     const p3 = document.getElementById('p3');
     const p4 = document.getElementById('p4');
     
+    // Words for each category
+    const animals = ['dog', 'cat', 'elephant', 'giraffe', 'kangaroo'];
+    const vehicles = ['car', 'bicycle', 'scooter', 'truck', 'airplane'];
+    const exclamations = ['Wow', 'Oops', 'Eureka', 'Bingo', 'Hurray'];
+    const names = ['Alex', 'Jordan', 'Taylor', 'Morgan', 'Mary'];
+    const emotions = ['happy', 'sad', 'excited', 'nervous', 'relaxed'];
+    const sports = ['soccer', 'basketball', 'chess', 'tennis', 'badminton'];
+
+    /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~Stories~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+
+    // Add event listener to Random button
+    const randomBtn = document.getElementById('random');
+    randomBtn.addEventListener('click', fillRandomWords);
+
+    // Function to fill input fields with random words
+    function fillRandomWords() {
+        document.getElementById('word1').value = getRandomWord(animals);
+        document.getElementById('word2').value = getRandomWord(vehicles);
+        document.getElementById('word3').value = getRandomWord(exclamations);
+        document.getElementById('word4').value = getRandomWord(names);
+        document.getElementById('word5').value = getRandomWord(emotions);
+        document.getElementById('word6').value = getRandomWord(sports);
+    }
+
+    // Get random word from the arrays
+    function getRandomWord(array) {
+        const randomIndex = Math.floor(Math.random() * array.length);
+        return array[randomIndex];
+    }
+
+    /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~Instructions overlay~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+
+    document.addEventListener('DOMContentLoaded', (event) => { // Event listener upon entering site
+        const instructionsOverlay = document.getElementById('instructions-overlay'); // Element of the instruction overlay
+        const showInstructionsBtn = document.getElementById('show-instructions');// Element of ? button
+        const closeInstructionsBtn = document.getElementById('close-instructions');// Element of Close button
+
+        // Show the overlay when the page loads
+        instructionsOverlay.style.display = 'block';
+
+        // Hide overlay when "Close" is clicked
+        closeInstructionsBtn.addEventListener('click', function() { 
+            instructionsOverlay.style.display = 'none';
+        });
+    
+        // Toggle overlay visibility when ? button is clicked
+        showInstructionsBtn.addEventListener('click', function() {
+            if (instructionsOverlay.style.display === 'none') {
+                instructionsOverlay.style.display = 'block';
+            } else {
+                instructionsOverlay.style.display = 'none';
+            }
+        });
+    });
+    
+    /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~Story Overlay~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
     closeBtn.addEventListener('click', function() { 
         storyOverlay.style.display = 'none';
     });
@@ -38,7 +96,18 @@
         if(emptyfields.length > 0){
             showErrors(formData, emptyfields);
         } else {
-            makeMadlib(words);
+            const storyVersion = Math.floor(Math.random() * 3);
+            switch (storyVersion) {
+                case 0:
+                    makeMadlib(words);
+                    break;
+                case 1:
+                    makeMadlibVersion2(words);
+                    break;
+                case 2:
+                    makeMadlibVersion3(words);
+                    break;
+            }
         }
     }
 
@@ -49,41 +118,36 @@
         document.querySelector(`#${errorId}`).focus();
     }
 
+    /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~Stories~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+
+    // First story template
     function makeMadlib(words){
         p1.innerHTML = `One sunny day, a ${words[0]} named ${words[3]} decided to go to the park. As it strolled along the path a ${words[1]} suddenly zoomed by.`;
         p2.innerHTML = `"${words[2]}!" shouted ${words[3]}, as it jumped out of the way. The ${words[0]} then stumbled upon a picnic blanket, where it found a basket full of chips and chocolates. Feeling peckish, ${words[3]} decided to snack on them.`; 
-        p3.innerHTML = `Afterward, the ${ words[0] } felt ${ words[4] }. It decided to join a game of ${ words[5] } that some children were playing nearby. The game was intense, and ${ words[3] } proved to be quite skilled at it.`;
+        p3.innerHTML = `Afterward, the ${ words[0] } felt ${ words[4] }. It decided to join a game of ${ words[5] } that some children were playing nearby.The game was intense, and ${ words[3] } proved to be quite skilled at it.`;
         p4.innerHTML = `As the sun began to set, ${words[3]} headed home, thinking about all the wild and wacky adventures it had at the park that day. It couldn't wait to return and see what new adventures awaited.`;
 
         for( const eachField of formData){
             eachField.value = '';
         }
     }
+    // Second story template
+    function makeMadlibVersion2(words) {
+        p1.innerHTML = `Deep in the dense jungle, a ${words[0]} named ${words[3]} was skillfully maneuvering an old ${words[1]}.`;
+        p2.innerHTML = `Out of the blue, ${words[3]} yelled "${words[2]}!" spotting a hidden path leading to an ancient, overgrown treasure site.`;
+        p3.innerHTML = `Intrigued and feeling ${words[4]}, ${words[3]} ventured down the path, discovering a lively group of explorers playing a game of ${words[5]}.`;
+        p4.innerHTML = `${words[3]} joined the exciting game, going on the unforgettable jungle adventure, forming lasting bonds with new companions along the way.`;
+    }
 
-    /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+
+    // Third story template
+    function makeMadlibVersion3(words) {
+        p1.innerHTML = `In a magical imaginary world, a ${words[0]} named ${words[3]} stumbled upon an broken ${words[1]} in a dreamy meadow.`;
+        p2.innerHTML = `While exploring, ${words[3]} screamed "${words[2]}" in amazement upon discovering a majestic, floating castle hiding in the clouds.`;
+        p3.innerHTML = `Once inside the castle, ${words[3]} was overwhelmed and somewhat ${words[4]}, and found themselves in the middle of a grand ${words[5]} contest.`;
+        p4.innerHTML = `The eventful day concluded with ${words[3]} triumphantly being crowned the victor, a magical experience etched in their memory for eternity.`;
+    }
     
-    document.addEventListener('DOMContentLoaded', (event) => { // Event listener upon entering site
-        const instructionsOverlay = document.getElementById('instructions-overlay'); // Element of the instruction overlay
-        const showInstructionsBtn = document.getElementById('show-instructions');// Element of ? button
-        const closeInstructionsBtn = document.getElementById('close-instructions');// Element of Close button
 
-        // Show the overlay when the page loads
-        instructionsOverlay.style.display = 'block';
-
-        // Hide overlay when "Close" is clicked
-        closeInstructionsBtn.addEventListener('click', function() { 
-            instructionsOverlay.style.display = 'none';
-        });
     
-        // Toggle overlay visibility when ? button is clicked
-        showInstructionsBtn.addEventListener('click', function() {
-            if (instructionsOverlay.style.display === 'none') {
-                instructionsOverlay.style.display = 'block';
-            } else {
-                instructionsOverlay.style.display = 'none';
-            }
-        });
-    });
-
-    /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
 } )();
