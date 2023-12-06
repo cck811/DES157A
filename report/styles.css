@@ -60,6 +60,15 @@ header h1{
     text-align: center;
     margin-bottom:0;
 }
+#navigations {
+    width: 320px;
+
+    margin: auto;
+}
+
+#navigations h3{
+    text-align: center;
+}
 
 main {
     max-width: 60%;
@@ -75,8 +84,11 @@ section {
     padding: 20px;
     margin: 20px;
 }
-#funtion-improvement{
+#content{
+    width: 600px;
+    margin: auto;
     margin-top:0;
+
 }
 
 footer {
