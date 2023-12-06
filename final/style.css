@@ -27,8 +27,8 @@ h1, h2 { /*change default margin*/
 
 body {
     font-family: 'Montserrat', sans-serif;
-    background-color: #ffffff;
-    background-image:  radial-gradient(#a7a7a7 1.5px, transparent 1.5px), radial-gradient(#a7a7a7 1.5px, #ffffff 1.5px);
+    background-color: #fbfbfb;
+    background-image:  radial-gradient(#a7a7a7 1.5px, transparent 1.5px), radial-gradient(#a7a7a7 1.5px, #f6f6f6 1.5px);
     background-size: 60px 60px;
     background-position: 0 0,30px 30px;
     margin: 0;
