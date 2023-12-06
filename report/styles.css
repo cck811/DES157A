@@ -24,6 +24,9 @@ h1, h2 { /*change default margin*/
     margin-bottom: .5em; 
 }
 /* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~CSS Start~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+html {
+    scroll-behavior: smooth;
+}
 
 body, html {
     height: 100%;
@@ -66,7 +69,7 @@ header h1{
     margin: auto;
 }
 
-#navigations h3{
+#navigations h3 {
     text-align: center;
 }
 
@@ -78,6 +81,7 @@ main {
 img {
     max-width: 60%;
     margin: auto;
+    margin-bottom:20px;
 }
 
 section {
@@ -85,7 +89,7 @@ section {
     margin: 20px;
 }
 #content{
-    width: 600px;
+    max-width: 600px;
     margin: auto;
     margin-top:0;
 
