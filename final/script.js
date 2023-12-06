@@ -133,18 +133,18 @@
     }
     // Second story template
     function makeMadlibVersion2(words) {
-        p1.innerHTML = `Deep in the dense jungle, a ${words[0]} named ${words[3]} was skillfully maneuvering an old ${words[1]}.`;
-        p2.innerHTML = `Out of the blue, ${words[3]} yelled "${words[2]}!" spotting a hidden path leading to an ancient, overgrown treasure site.`;
-        p3.innerHTML = `Intrigued and feeling ${words[4]}, ${words[3]} ventured down the path, discovering a lively group of explorers playing a game of ${words[5]}.`;
+        p1.innerHTML = `Deep in the dense jungle, a ${words[0]} named ${words[3]} was skillfully maneuvering an old ${words[1]} thorugh the rough and bumpy terrain.`;
+        p2.innerHTML = `It was not a smooth ride but a lot of fun to drive on. Out of the blue, ${words[3]} yelled "${words[2]}!" spotting a hidden path in the bushy green, which leads to an ancient, overgrown treasure site.`;
+        p3.innerHTML = `Intrigued and feeling ${words[4]}, ${words[3]} ventured down the path, suddently some strange noises surrounded the area, revealing a lively group of explorers playing a game of ${words[5]}.`;
         p4.innerHTML = `${words[3]} joined the exciting game, going on the unforgettable jungle adventure, forming lasting bonds with new companions along the way.`;
     }
 
 
     // Third story template
     function makeMadlibVersion3(words) {
-        p1.innerHTML = `In a magical imaginary world, a ${words[0]} named ${words[3]} stumbled upon an broken ${words[1]} in a dreamy meadow.`;
-        p2.innerHTML = `While exploring, ${words[3]} screamed "${words[2]}" in amazement upon discovering a majestic, floating castle hiding in the clouds.`;
-        p3.innerHTML = `Once inside the castle, ${words[3]} was overwhelmed and somewhat ${words[4]}, and found themselves in the middle of a grand ${words[5]} contest.`;
+        p1.innerHTML = `In the magical imaginary world of Madlibia, a ${words[0]} named ${words[3]} stumbled upon a broken ${words[1]} in a dreamy meadow.`;
+        p2.innerHTML = `While exploring the dager yet exciting world, ${words[3]} screamed "${words[2]}" in amazement upon discovering a majestic, floating castle hiding in the clouds high above.`;
+        p3.innerHTML = `${words[3]} fixed the broken ${words[1]} and drove up to the castle via a hidden path, ${words[3]} was overwhelmed but ${words[4]} ay the same time, it turns out there was a grand ${words[5]} contest in the middle of the castle.`;
         p4.innerHTML = `The eventful day concluded with ${words[3]} triumphantly being crowned the victor, a magical experience etched in their memory for eternity.`;
     }
     
